@@ -22,7 +22,6 @@ def reconstruct_trip(tickets, length):
 
     for i in range (length):
         curr_ticket = tickets[i]
-        print(f'curr_ticket', curr_ticket.source, curr_ticket.destination)
         hash_table_insert(hashtable, curr_ticket.source, curr_ticket.destination)
 
     curr_loc = hash_table_retrieve(hashtable,'NONE')
@@ -31,10 +30,5 @@ def reconstruct_trip(tickets, length):
         route[route_idx] = curr_loc
         route_idx += 1
         curr_loc = hash_table_retrieve(hashtable,curr_loc)
-
-
-    # for i in route:
-    #     i = curr_loc
-    #     curr_loc = hash_table_retrieve(curr_loc)
 
     return route
